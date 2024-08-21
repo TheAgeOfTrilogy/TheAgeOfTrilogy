@@ -4,8 +4,8 @@
 }
 
 :root {
-    --reading-font: "Kingthings Petrock"; 
-    --black-bg: black; 
+    --reading-font: "Kingthings Petrock";
+    --black-bg: black;
 }
 
 body {
@@ -20,36 +20,71 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; 
+    height: 100vh;
     width: 100vw;
     flex-direction: column;
 }
 
+/* Initial state for the AoT-logo, hidden and small */
 .AoT-logo {
-    width: 10%;
-    animation: fadeInLogo backwards 3s 12s;
-    opacity: 1;
+    width: 25%;
+    opacity: 0;
+    /* Start hidden */
+    transform: scale(0.5);
+    /* Start smaller */
     user-select: none;
+    display: none;
+}
+
+/* Class to trigger the fadeInAndScale animation */
+.show-logo {
+    animation: fadeInAndScale 10s forwards, glowEffect 5s 3s forwards;
+    display: block;
+    opacity: 1;
 }
 
 .disclaimer_en {
     width: 50%;
     text-align: center;
-    animation: fadeIn backwards 3s 1s, fadeOut 3s 8s forwards;;
+    animation: fadeIn 3s 1s backwards;
     opacity: 1;
     user-select: none;
     margin: 0;
-    font-size: 1.5rem; /* Standaard fontgrootte */
-    
+    font-size: 1.5rem;
+    /* Standaard fontgrootte */
+
 }
+
+.AoT-logo.show-logo .lightning {
+    animation: fadeIn 1s 5s backwards, glowEffectSymbols 5s 4s forwards;
+    opacity: 1;
+}
+.AoT-logo.show-logo .spade {
+    animation: fadeIn 1s 5.5s backwards, glowEffectSymbols 5s 4.5s forwards;
+    opacity: 1;
+}
+.AoT-logo.show-logo .diamond {
+    animation: fadeIn 1s 6s backwards, glowEffectSymbols 5s 5s forwards;
+    opacity: 1;
+}
+
+.lightning,
+.spade,
+.diamond {
+    fill: white;
+    opacity: 0;
+}
+
+
 
 .fairuse {
     width: 50%;
     text-align: center;
-    animation: fadeIn backwards 3s 1.5s, fadeOut 3s 8s forwards;
+    animation: fadeIn 3s 1.5s backwards;
     opacity: 1;
     user-select: none;
-    font-size: 1.2rem; /* Standaard fontgrootte */
+    font-size: 1.2rem;
+    /* Standaard fontgrootte */
 }
 
 h2 {
@@ -57,13 +92,37 @@ h2 {
     animation: fadeIn backwards .5s 14s;
 }
 
+
+#acceptButton {
+    animation: fadeIn backwards 3s 4s;
+    opacity: 1;
+    padding: 10px 40px;
+    background-color: rgb(141, 57, 57);
+    color: white;
+    font-family: var(--reading-font);
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 100px;
+    transition: .5s;
+}
+
+#acceptButton.fadeOut {
+    animation: fadeOut 3s forwards;
+} 
+
+/* Fade-out class to be added dynamically */
+.fadeOut {
+    animation: fadeOut 3s forwards;
+}
+
 /* Medium scherm (Tablets en kleinere laptops) */
 @media (min-width: 768px) and (max-width: 1199px) {
 
     .AoT-logo {
         width: 20%;
-    
+
     }
+
     .disclaimer_en {
         font-size: 1.75rem;
         width: 80%;
@@ -79,22 +138,24 @@ h2 {
 /* Klein scherm (Mobiele telefoons en kleinere tablets) */
 @media (max-width: 767px) {
     .AoT-logo {
-        width: 20%; /* Verklein het logo op kleinere schermen */
+        width: 20%;
+        /* Verklein het logo op kleinere schermen */
     }
 
     .disclaimer_en {
-        width: 80%; /* Maak de tekst breder voor betere leesbaarheid op kleinere schermen */
+        width: 80%;
+        /* Maak de tekst breder voor betere leesbaarheid op kleinere schermen */
         font-size: 1rem;
         line-height: 1.3rem;
     }
 
     .fairuse {
-        width: 80%; /* Maak de tekst breder voor betere leesbaarheid op kleinere schermen */
+        width: 80%;
+        /* Maak de tekst breder voor betere leesbaarheid op kleinere schermen */
         font-size: .6rem;
         line-height: 1rem;
     }
 }
-
 
 /* Animations */
 
@@ -108,18 +169,6 @@ h2 {
     }
 }
 
-@keyframes fadeInLogo {
-    from {
-        opacity: 0;
-        display: none;
-    }
-
-    to {
-        opacity: 1;
-        display: block;
-    }
-}
-
 @keyframes fadeOut {
     from {
         opacity: 1;
@@ -128,5 +177,49 @@ h2 {
     to {
         opacity: 0;
         display: none;
+    }
+}
+
+
+/* Animation for scaling and fading in the AoT-logo */
+@keyframes fadeInAndScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes glowEffect {
+    0% {
+        -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); 
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); 
+    }
+    50% {
+        -webkit-filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.8)); 
+        filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.8));
+    }
+    100% {
+        -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); 
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); 
+    }
+}
+
+@keyframes glowEffectSymbols {
+    0% {
+        -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); 
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); 
+    }
+    50% {
+        -webkit-filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.8)); /* Maximum glow at mid-point */
+        filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.8)); /* Maximum glow at mid-point */
+    }
+    100% {
+        -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); /* Fade away glow by the end */
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); /* Fade away glow by the end */
     }
 }
