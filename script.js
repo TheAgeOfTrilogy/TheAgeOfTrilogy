@@ -6,7 +6,7 @@ document.getElementById('acceptButton').onclick = function() {
 
     // Play the audio and start the animation after 3.5 seconds
     setTimeout(function() {
-        var audio = new Audio('Audio/AoT-intro.mp3');
+        var audio = new Audio('./Audio/AoT-intro.mp3');
         audio.play();
 
         document.querySelector('.AoT-logo').classList.add('show-logo');
