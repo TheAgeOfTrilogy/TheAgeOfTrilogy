@@ -6,7 +6,7 @@ document.getElementById('acceptButton').onclick = function() {
 
     // Play the audio and start the animation after 3.5 seconds
     setTimeout(function() {
-        var audio = new Audio('./AoT-intro.mp3');
+        var audio = new Audio('https://github.com/TheAgeOfTrilogy/TheAgeOfTrilogy/raw/main/AoT-Intro.mp3');
         audio.play();
 
         document.querySelector('.AoT-logo').classList.add('show-logo');
