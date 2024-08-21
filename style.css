@@ -1,0 +1,120 @@
+@font-face {
+    font-family: "Kingthings Petrock";
+    src: url(./fonts/Kingthings_Petrock_light.ttf);
+}
+
+:root {
+    --reading-font: "Kingthings Petrock"; 
+    --black-bg: black; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--reading-font);
+    background-color: var(--black-bg);
+    color: white;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    width: 100vw;
+    flex-direction: column;
+}
+
+.AoT-logo {
+    width: 10%;
+    animation: fadeIn backwards 3s .5s, fadeOut 3s 8s forwards;;
+    opacity: 1;
+    user-select: none;
+}
+
+.disclaimer_en {
+    width: 50%;
+    text-align: center;
+    animation: fadeIn backwards 3s 1s, fadeOut 3s 8s forwards;;
+    opacity: 1;
+    user-select: none;
+    margin: 0;
+    font-size: 1.5rem; /* Standaard fontgrootte */
+    
+}
+
+.fairuse {
+    width: 50%;
+    text-align: center;
+    animation: fadeIn backwards 3s 1.5s, fadeOut 3s 8s forwards;
+    opacity: 1;
+    user-select: none;
+    font-size: 1.2rem; /* Standaard fontgrootte */
+}
+
+h2 {
+    opacity: 1;
+    animation: fadeIn backwards .5s 14s;
+}
+
+/* Medium scherm (Tablets en kleinere laptops) */
+@media (min-width: 768px) and (max-width: 1199px) {
+
+    .AoT-logo {
+        width: 20%;
+    
+    }
+    .disclaimer_en {
+        font-size: 1.75rem;
+        width: 80%;
+        line-height: 2.5rem;
+    }
+
+    .fairuse {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+    }
+}
+
+/* Klein scherm (Mobiele telefoons en kleinere tablets) */
+@media (max-width: 767px) {
+    .AoT-logo {
+        width: 20%; /* Verklein het logo op kleinere schermen */
+    }
+
+    .disclaimer_en {
+        width: 80%; /* Maak de tekst breder voor betere leesbaarheid op kleinere schermen */
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    .fairuse {
+        width: 80%; /* Maak de tekst breder voor betere leesbaarheid op kleinere schermen */
+        font-size: .6rem;
+        line-height: 1rem;
+    }
+}
+
+
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
