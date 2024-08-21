@@ -56,15 +56,15 @@ main {
 }
 
 .AoT-logo.show-logo .lightning {
-    animation: fadeIn 1s 5s backwards, glowEffectSymbols 5s 4s forwards;
+    animation: fadeIn 1s 5s backwards, glowEffectSymbolsSolaria 5s 4s forwards;
     opacity: 1;
 }
 .AoT-logo.show-logo .spade {
-    animation: fadeIn 1s 5.5s backwards, glowEffectSymbols 5s 4.5s forwards;
+    animation: fadeIn 1s 5.5s backwards, glowEffectSymbolsEclipsa 5s 4.5s forwards;
     opacity: 1;
 }
 .AoT-logo.show-logo .diamond {
-    animation: fadeIn 1s 6s backwards, glowEffectSymbols 5s 5s forwards;
+    animation: fadeIn 1s 6s backwards, glowEffectSymbolsFestivia 5s 5s forwards;
     opacity: 1;
 }
 
@@ -209,14 +209,42 @@ h2 {
     }
 }
 
-@keyframes glowEffectSymbols {
+@keyframes glowEffectSymbolsSolaria {
     0% {
         -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); 
         filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); 
     }
     50% {
-        -webkit-filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.8)); /* Maximum glow at mid-point */
-        filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.8)); /* Maximum glow at mid-point */
+        -webkit-filter: drop-shadow(0 0 40px #fffb1fcc); /* Maximum glow at mid-point */
+        filter: drop-shadow(0 0 40px #fffb1fcc); /* Maximum glow at mid-point */
+    }
+    100% {
+        -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); /* Fade away glow by the end */
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); /* Fade away glow by the end */
+    }
+}
+@keyframes glowEffectSymbolsEclipsa {
+    0% {
+        -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); 
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); 
+    }
+    50% {
+        -webkit-filter: drop-shadow(0 0 40px #c072ffcc); /* Maximum glow at mid-point */
+        filter: drop-shadow(0 0 40px #c072ffcc); /* Maximum glow at mid-point */
+    }
+    100% {
+        -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); /* Fade away glow by the end */
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); /* Fade away glow by the end */
+    }
+}
+@keyframes glowEffectSymbolsFestivia {
+    0% {
+        -webkit-filter: drop-shadow(0 0 0 rgba(255, 67, 214, 0)); 
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); 
+    }
+    50% {
+        -webkit-filter: drop-shadow(0 0 40px #ff43d6); /* Maximum glow at mid-point */
+        filter: drop-shadow(0 0 40px #ff43d6); /* Maximum glow at mid-point */
     }
     100% {
         -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); /* Fade away glow by the end */
