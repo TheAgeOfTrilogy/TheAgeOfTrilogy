@@ -27,7 +27,7 @@ main {
 
 .AoT-logo {
     width: 10%;
-    animation: fadeIn backwards 3s .5s, fadeOut 3s 8s forwards;;
+    animation: fadeInLogo backwards 3s 12s;
     opacity: 1;
     user-select: none;
 }
@@ -105,6 +105,18 @@ h2 {
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes fadeInLogo {
+    from {
+        opacity: 0;
+        display: none;
+    }
+
+    to {
+        opacity: 1;
+        display: block;
     }
 }
 
