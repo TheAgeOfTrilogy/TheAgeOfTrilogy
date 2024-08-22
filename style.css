@@ -38,9 +38,10 @@ main {
 
 /* Class to trigger the fadeInAndScale animation */
 .show-logo {
-    animation: fadeInAndScale 10s forwards, glowEffect 5s 3s forwards;
+    animation: fadeInAndScale 10s forwards, glowEffect 13s 3s forwards, shrink 1s 13s forwards, slideUp 1s 13.5s forwards !important;
     display: block;
     opacity: 1;
+
 }
 
 .disclaimer_en {
@@ -254,5 +255,22 @@ h2 {
     100% {
         -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); /* Fade away glow by the end */
         filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); /* Fade away glow by the end */
+    }
+}
+
+@keyframes shrink {
+    from {
+        scale: 1;
+    }
+    to {
+        scale: .3;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(0);
+    } to {
+        transform: translateY(-1250px);
     }
 }
